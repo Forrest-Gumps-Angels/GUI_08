@@ -10,7 +10,7 @@
         <local:MainWindowViewModel/>
     </Window.DataContext>
     <Window.Resources>
-        <local:RGBtoSolidColorConverter x:Key="RGBconverter"/>
+        <ResourceDictionary Source="stylesheet.xaml"/>
     </Window.Resources>
     <Window.Background>
         <SolidColorBrush>
@@ -47,11 +47,15 @@
         </Menu>
             
 
-        <ToolBar DockPanel.Dock="Top" FontSize="20">
+        <ToolBar DockPanel.Dock="Top" FontSize="20" Height="42">
             <Button Content="&lt;" Command="{Binding Backward}"/>
             <Button Content="&gt;" Command="{Binding Forward}"/>
             <Button Content="+" Command="{Binding AddNewAgent}"/>
-            <Button Content="-" Command="{Binding DeleteNewAgent}"/>
+            <Button Command="{Binding DeleteNewAgent}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <Button.Content>
+                    <Image Source="delete.png" Stretch="Fill"/>
+                </Button.Content>
+            </Button>
         </ToolBar>
 
 
@@ -92,7 +96,7 @@
                 <Label Grid.Column="0" Grid.Row="2" Content="Specialty"/>
                 <Label Grid.Column="0" Grid.Row="3" Content="Assignment"/>
 
-                <TextBox Grid.Column="1" Text="{Binding currentAgent.ID}" Width="50" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="1" Text="{Binding currentAgent.ID}" Width="50" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe UI"/>
                 <TextBox Grid.Column="1" x:Name="name_textbox" Text="{Binding currentAgent.CodeName, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" HorizontalAlignment="Left" Width="138" VerticalAlignment="Center"/>
                 <TextBox Grid.Column="1" Text="{Binding currentAgent.Speciality}" Grid.Row="2" HorizontalAlignment="Left" Width="138" VerticalAlignment="Center"/>
                 <TextBox Grid.Column="1" Text="{Binding currentAgent.Assignment}" Grid.Row="3" HorizontalAlignment="Left" Width="138" VerticalAlignment="Stretch" Height="50" Margin="0,4,0,4"/>
