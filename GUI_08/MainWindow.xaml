@@ -96,7 +96,7 @@
                 <Label Grid.Column="0" Grid.Row="2" Content="Specialty"/>
                 <Label Grid.Column="0" Grid.Row="3" Content="Assignment"/>
 
-                <TextBox Grid.Column="1" Text="{Binding currentAgent.ID}" Width="50" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe UI"/>
+                <TextBox Grid.Column="1" Text="{Binding currentAgent.ID}" Width="50" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource IDstyle}"/>
                 <TextBox Grid.Column="1" x:Name="name_textbox" Text="{Binding currentAgent.CodeName, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" HorizontalAlignment="Left" Width="138" VerticalAlignment="Center"/>
                 <TextBox Grid.Column="1" Text="{Binding currentAgent.Speciality}" Grid.Row="2" HorizontalAlignment="Left" Width="138" VerticalAlignment="Center"/>
                 <TextBox Grid.Column="1" Text="{Binding currentAgent.Assignment}" Grid.Row="3" HorizontalAlignment="Left" Width="138" VerticalAlignment="Stretch" Height="50" Margin="0,4,0,4"/>

@@ -13,12 +13,18 @@
             <Trigger Property="ItemsControl.IsMouseOver" Value="true">
                 <Setter Property="ItemsControl.Foreground" Value="Black"/>
             </Trigger>
-
         </Style.Triggers>
     </Style>
     <Style TargetType="Label">
         <Setter Property="ItemsControl.FontFamily" Value="Consolas"/>
         <Setter Property="ItemsControl.Foreground" Value="GreenYellow"/>
+    </Style>
+    <Style x:Key="IDstyle" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=Text, RelativeSource={RelativeSource Mode=Self}}" Value="007">
+                <Setter Property="Foreground" Value="DarkBlue"/>
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
 
 </ResourceDictionary>
